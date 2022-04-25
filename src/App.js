@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/header';
+import ItemList from './components/itemList';
+import Basket from './components/basket';
+import React, { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    const [searchParams, setSearchParams] = useSearchParams();
+    const createReactUseEffect = (sneackersLink) => {};
+
+    const dataBaseLink = 'https://62655ccc94374a2c506f8ec6.mockapi.io/DreamStoreDatabase';
+    const [items, setItems] = useState([]);
+
+    React.useEffect(() => {
+        fetch(dataBaseLink)
+            .then((res) => {
+                return res.json();
+            })
+            .then((json) => {
+                setItems((items) => [...items, json]);
+            })
+            .then(() => {
+                console.log(items);
+            });
+    }, []);
+
+    const [basket, setBasketItems] = useState([]);
+    const [basketActive, setBasketActive] = useState(false);
+    const [menuActive, setMenuActive] = useState(false);
+    function addToBasket(card) {
+        setBasketItems((basket) => [...basket, card]);
+    }
+
+    return (
+        <div className="App">
+            <div className="container">
+                <Header
+                    setBasketActive={setBasketActive}
+                    setMenuActive={setMenuActive}
+                    menuActive={menuActive}
+                />
+
+                <ItemList
+                    dataItem={searchParams.get('category')}
+                    items={items}
+                    addToBasket={addToBasket}
+                />
+                {basketActive ? <Basket setBasketActive={setBasketActive} items={basket} /> : null}
+            </div>
+        </div>
+    );
 }
-
-export default App;
