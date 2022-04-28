@@ -12,6 +12,8 @@
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-spring": "^9.4.4",
+    "react-transition-group": "^4.4.2",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.50.1",
     "scss-loader": "^0.0.1",

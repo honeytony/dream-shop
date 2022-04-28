@@ -1,0 +1,21 @@
+@keyframes dropdown {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.header nav {
+    overflow: hidden;
+    transition: 0.3s;
+}
+.header nav.entering {
+    height: 0px;
+}
+.header nav.entered {
+    height: 100px;
+}
+.header nav.exiting {
+    height: 0px;
+}

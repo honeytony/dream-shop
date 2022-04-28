@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Transition } from 'react-transition-group';
 import './header.scss';
 
 const Header = ({ setBasketActive, basketItems }) => {
     const [menuActive, setMenuActive] = useState(false);
-
     return (
         <>
             <div className="header">
@@ -49,10 +49,12 @@ const Header = ({ setBasketActive, basketItems }) => {
                         </div>
                     </div>
                 </div>
-                {}
-                {menuActive ? (
-                    <>
-                        <nav>
+
+                {/* {menuActive ? ( */}
+
+                <Transition in={menuActive} timeout={{ exit: 1000 }} mountOnEnter unmountOnExit>
+                    {(state) => (
+                        <nav className={state}>
                             <ul>
                                 <li>
                                     <div className="icon mechmod"></div>
@@ -80,8 +82,9 @@ const Header = ({ setBasketActive, basketItems }) => {
                                 </li>
                             </ul>
                         </nav>
-                    </>
-                ) : null}
+                    )}
+                </Transition>
+                {/* ) : null} */}
             </div>
         </>
     );
