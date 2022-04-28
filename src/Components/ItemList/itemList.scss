@@ -1,0 +1,31 @@
+.itemList {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 20px;
+    .item {
+        width: 220px;
+        border: 1px solid lightgray;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px 20px;
+
+        margin-left: 20px;
+        &-header {
+            font-size: 20px;
+            text-align: right;
+            margin: 10px 0;
+        }
+        &-cost {
+            text-align: right;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        img {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,178 @@
+a {
+    color: #8f4ef9;
+}
+.header {
+    width: 100%;
+    .preheader {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-left: 8%;
+        padding-right: 8%;
+        font-family: 'Montserrat Bold';
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 4px solid rgba(143, 78, 249, 0.1);
+
+        .buttons {
+            display: flex;
+            width: 331px;
+            max-width: 100%;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .basket {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Open Sans';
+            font-size: 12px;
+            cursor: pointer;
+            &-count {
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 20px;
+                width: 18px;
+                height: 18px;
+                color: white;
+                font-weight: 800;
+                background-color: #1f1f1f;
+                transform: translate(-50%, -30%);
+                box-sizing: border-box;
+            }
+            .icon {
+                margin-right: 10px;
+                width: 20px;
+                height: 20px;
+
+                background-size: contain;
+                background-repeat: no-repeat;
+
+                &-login {
+                    background-image: url('../../Assets/Images/user.svg');
+                }
+                &-heart {
+                    background-image: url('../../Assets/Images/heart.svg');
+                }
+                &-basket {
+                    background-image: url('../../Assets/Images/basket.svg');
+                }
+            }
+        }
+        .logo {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 360px;
+            max-width: 100%;
+            .button-menu {
+                display: flex;
+                justify-content: space-around;
+                width: 24%;
+                align-items: center;
+                cursor: pointer;
+                .dropdown-button {
+                    width: 14px;
+                    height: 14px;
+                    background-image: url('../../Assets/Images/dropdown.svg');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+            }
+            .img {
+                width: 40px;
+                height: 37px;
+                background-image: url('../../Assets/Images/logo.svg');
+                background-size: cover;
+            }
+            a {
+                text-decoration: none;
+                transition: 0.3s;
+            }
+            a:focus {
+            }
+            a:active {
+                color: black;
+            }
+            h2 {
+                font-family: 'Open Sans Bold';
+                font-size: 26px;
+                letter-spacing: 0.08em;
+                margin: 0;
+                margin-bottom: -7px;
+                text-decoration: none;
+                color: black;
+                span {
+                    color: #8f4ef9;
+                }
+            }
+        }
+    }
+
+    nav {
+        width: 100%;
+        box-sizing: border-box;
+        border-bottom: 4px solid rgba(143, 78, 249, 0.1);
+        padding-left: 8%;
+        padding-right: 8%;
+
+        ul {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+
+            padding: 0;
+            margin: 0;
+            margin-top: 40px;
+            margin-bottom: 40px;
+
+            li {
+                font-size: 16px;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                .icon {
+                    width: 20px;
+                    height: 30px;
+
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+                .mechmod {
+                    background-image: url('../../Assets/Images/mechmode.svg');
+                }
+                .plate {
+                    background-image: url('../../Assets/Images/plate.svg');
+                }
+                .solt {
+                    background-image: url('../../Assets/Images/solt.svg');
+                }
+                .drips {
+                    width: 17px;
+                    margin-right: 10px;
+                    background-image: url('../../Assets/Images/drips.svg');
+                }
+                .liquid {
+                    margin-right: 4px;
+                    background-image: url('../../Assets/Images/liquid.svg');
+                }
+                a {
+                    color: rgba(95, 47, 174, 1);
+                    font-family: 'Montserrat SemiBold';
+                    text-decoration: none;
+                    font-size: 20px;
+                    padding-bottom: 4px;
+                    border-bottom: 2px solid transparent;
+                    transition: 0.3s;
+                    border-radius: 2px;
+                    &:hover {
+                        border-bottom: 2px solid rgba(95, 47, 174, 1);
+                    }
+                }
+            }
+        }
+    }
+}
