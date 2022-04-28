@@ -13,7 +13,6 @@ export default function App() {
     return (
         <>
             <div className="container">
-                <h1>hello</h1>
                 <Header setBasketActive={setBasketActive} basketItems={basketItems.length} />
                 <Basket
                     basketActive={basketActive}
