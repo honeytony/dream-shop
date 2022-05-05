@@ -9,7 +9,9 @@ const MainPageBanner = () => {
                     <span>Получи скидку 20% на первый заказ</span>
                     <button className="btn">Получить</button>
                 </div>
-                <div className="right"></div>
+                <div className="right">
+                    <div className="imageElement"></div>
+                </div>
             </div>
         </div>
     );

@@ -1,3 +1,4 @@
+@import './mainPageBannerAnimation.scss';
 .banner {
     width: 100%;
     height: 360px;
@@ -5,12 +6,15 @@
     justify-content: space-between;
     background: linear-gradient(97.17deg, #5f2fae 0.47%, #81ffe1 100.2%);
     color: white;
+
+    overflow: hidden;
     .content {
         display: flex;
         width: 900px;
         max-width: 100%;
         margin: 0 auto;
         align-items: center;
+
         .left {
             width: 60%;
             display: flex;
@@ -32,6 +36,24 @@
                 font-family: 'Montserrat Bold';
                 color: #762fae;
                 background-color: white;
+                border-radius: 0;
+            }
+            button.btn:hover {
+                box-shadow: 0px 0px 2px 2px #c476ff;
+            }
+            button.btn:active {
+                background-color: #762fae;
+                color: white;
+            }
+        }
+        .right {
+            width: 40%;
+            .imageElement {
+                width: 566px;
+                height: 300px;
+                animation: view 1s ease-in-out;
+                transform: translateX(-100px);
+                background-image: url('../../Assets/Images/Banners/Tenprocentaction/handwithliquid.png');
             }
         }
     }
