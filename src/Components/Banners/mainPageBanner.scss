@@ -1,0 +1,38 @@
+.banner {
+    width: 100%;
+    height: 360px;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(97.17deg, #5f2fae 0.47%, #81ffe1 100.2%);
+    color: white;
+    .content {
+        display: flex;
+        width: 900px;
+        max-width: 100%;
+        margin: 0 auto;
+        align-items: center;
+        .left {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 250px;
+            h2 {
+                font-family: 'Montserrat Bold';
+                font-size: 47.6px;
+                margin: 0;
+            }
+            span {
+                font-family: 'Montserrat';
+                font-size: 20.6px;
+            }
+            button.btn {
+                font-size: 18px;
+                width: 200px;
+                font-family: 'Montserrat Bold';
+                color: #762fae;
+                background-color: white;
+            }
+        }
+    }
+}

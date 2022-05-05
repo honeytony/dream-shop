@@ -5,9 +5,14 @@ import Basket from './Components/Basket/basket';
 import RouteList from './Routes/RouteList';
 
 export default function App() {
-    const [basketItems, setBasketItems] = useState([]);
+    const [basketItems, setBasketItems] = useState([
+        JSON.parse(localStorage.getItem('basketItems')),
+    ]);
     const [basketActive, setBasketActive] = useState(false);
     function addToBasket(card) {
+        let basItems = JSON.parse(localStorage.getItem('basketItems')) || [];
+        basItems.push(card);
+        localStorage.setItem('basketItems', JSON.stringify(basItems));
         setBasketItems((basket) => [...basket, card]);
     }
     return (

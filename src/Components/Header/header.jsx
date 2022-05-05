@@ -13,7 +13,6 @@ const Header = ({ setBasketActive, basketItems }) => {
                         <Link to="/">
                             <div className="img"></div>
                         </Link>
-
                         <Link to="/">
                             <h2>
                                 DREAM<span>SHOP</span>

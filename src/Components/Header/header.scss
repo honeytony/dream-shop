@@ -76,6 +76,7 @@ a {
                 align-items: center;
                 cursor: pointer;
                 .dropdown-button {
+                    transition: 0.3s ease-in-out;
                     width: 14px;
                     height: 14px;
                     background-image: url('../../Assets/Images/dropdown.svg');
