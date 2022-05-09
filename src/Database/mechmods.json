@@ -1,12 +1,32 @@
 [
     {
-        "text": "Мехмод Кракен",
+        "text": "Кракен",
         "price": 6700,
         "img": "https://xn--80aaxitdbjk.xn--p1ai/wa-data/public/shop/products/17/53/15317/images/156300/156300.kraken-logo-edition-by-fir--korobka---mekhanicheskiy-mod.970.jpg"
     },
     {
-        "text": "Мехмод Taureg",
+        "text": "Taureg",
         "price": 5200,
         "img": "https://image.made-in-china.com/202f0j00bZItOyzrsQYf/Thunderhead-Creations-Thc-Tauren-Mech-Mod-Rda-Tube-Brass-Brass-Black-Copper-Copper-Black-Brass-Red.jpg"
+    },
+    {
+        "text": "CoilART MAGE MECH TRICKER - Black edition (механический мод + обслуживаемый атомайзер)",
+        "price": 3290,
+        "img": "https://xn--80aaxitdbjk.xn--p1ai/wa-data/public/shop/products/57/83/8357/images/127171/127171.coilart-mage-mech-tricker---black-edition-mekhanicheskiy-mod--obsluzhivaemyy-atomayzer.500x0.jpg"
+    },
+    {
+        "text": "CoilART MAGE MECH TRICKER - Resin edition (механический мод + обслуживаемый атомайзер)",
+        "price": 3790,
+        "img": "https://xn--80aaxitdbjk.xn--p1ai/wa-data/public/shop/products/61/83/8361/images/126675/126675.coilart-mage-mech-tricker---resin-edition-mekhanicheskiy-mod--obsluzhivaemyy-atomayzer.500x0.jpg"
+    },
+    {
+        "text": "Russian Mechanic V5",
+        "price": 6500,
+        "img": "https://xn--80aaxitdbjk.xn--p1ai/wa-data/public/shop/products/35/08/10835/images/138707/138707.russian-mechanic-v5---mekhanicheskiy-mod.500x0.jpg"
+    },
+    {
+        "text": "Hades (Yeahsmo) 26650",
+        "price": 999,
+        "img": "https://xn--80aaxitdbjk.xn--p1ai/wa-data/public/shop/products/01/35/3501/images/109761/109761.hades-yeahsmo-26650---mekhanicheskiy-mod.500x0.jpg"
     }
 ]

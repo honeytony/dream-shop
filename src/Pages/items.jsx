@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ItemList from '../Components/ItemList/itemList';
-const Mechmods = ({ addToBasket }) => {
-    const mechmods = require('../Database/mechmods.json');
-    const [items, setItems] = useState(mechmods);
+const Items = ({ addToBasket, category }) => {
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        setItems(require(`../Database/${category}.json`));
+    }, [category]);
     //const dataBaseLink = `https://run.mocky.io/v3/e636587f-12eb-499e-889b-0949d6368b19`;
 
     /*React.useEffect(() => {
@@ -17,4 +20,4 @@ const Mechmods = ({ addToBasket }) => {
     return <ItemList items={items} addToBasket={addToBasket} />;
 };
 
-export default Mechmods;
+export default Items;
