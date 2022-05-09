@@ -30,36 +30,39 @@
         }
         &-items {
             display: flex;
-            padding: 20px 30px;
+            flex-direction: row;
+
             .calculator {
                 width: 35%;
                 border: 1px lightgray;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-around;
+                justify-content: space-between;
                 height: 400px;
             }
             .itemss {
-                margin-left: 5%;
-                width: 60%;
+                width: 70%;
                 height: 400px;
+                padding-right: 20px;
                 overflow-y: scroll;
             }
             &-item {
+                border-bottom: 2px solid rgb(255, 238, 252);
+                padding: 14px 0;
                 display: flex;
                 img {
-                    width: 220px;
+                    width: 110px;
                 }
-                justify-content: flex-start;
+                justify-content: space-between;
                 .texts {
                     display: flex;
                     flex-direction: column;
                     align-items: flex-end;
                     .item-header {
-                        font-size: 22px;
+                        font-size: 18px;
                     }
                     .item-cost {
-                        font-size: 18px;
+                        font-size: 16px;
                         margin-top: 20px;
                         font-weight: 600;
                     }

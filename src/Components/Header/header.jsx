@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Transition } from 'react-transition-group';
+import HeaderIcon from './HeaderIcon/headerIcon';
 import './header.scss';
 
-const Header = ({ setBasketActive, basketItems }) => {
+const Header = ({ setBasketActive, basketItemsCount, favoriteItemsCount }) => {
     const [menuActive, setMenuActive] = useState(false);
     return (
         <>
@@ -31,17 +32,16 @@ const Header = ({ setBasketActive, basketItems }) => {
                         </div>
                     </div>
                     <div className="buttons">
-                        <div className="basket">
-                            <div className="icon icon-heart"></div>
-                            ИЗБРАННОЕ
-                        </div>
-                        <div className="basket" onClick={() => setBasketActive(true)}>
-                            <div className="icon icon-basket"></div>
-                            {basketItems ? (
-                                <span className="basket-count">{basketItems}</span>
-                            ) : null}
-                            КОРЗИНА
-                        </div>
+                        <HeaderIcon
+                            setBasketActive={setBasketActive}
+                            count={favoriteItemsCount}
+                            type={'favorite'}
+                        />
+                        <HeaderIcon
+                            setBasketActive={setBasketActive}
+                            count={basketItemsCount}
+                            type={'basket'}
+                        />
                         <div className="basket">
                             <div className="icon icon-login"></div>
                             ВХОД

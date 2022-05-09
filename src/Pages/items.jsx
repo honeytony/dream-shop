@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ItemList from '../Components/ItemList/itemList';
-const Items = ({ addToBasket, category }) => {
+const Items = ({ addToBasket, addToFavorite, category }) => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
@@ -17,7 +17,7 @@ const Items = ({ addToBasket, category }) => {
                 setItems(json);
             });
     }, []);*/
-    return <ItemList items={items} addToBasket={addToBasket} />;
+    return <ItemList items={items} addToBasket={addToBasket} addToFavorite={addToFavorite} />;
 };
 
 export default Items;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './basket.scss';
 
-const Basket = ({ basketItems, setBasketActive, basketActive }) => {
+const Basket = ({ basketItems, setBasketActive, basketActive, basketSum, removeFromBasket }) => {
     return (
         <div>
             {basketActive ? (
@@ -19,7 +19,7 @@ const Basket = ({ basketItems, setBasketActive, basketActive }) => {
                                 <div className="sum">
                                     <span>Сумма заказа: </span>
                                     <br />
-                                    <span>Руб</span>
+                                    <span>{basketSum} Руб</span>
                                 </div>
                                 <button className="btn">Оплатить</button>
                             </div>
@@ -36,6 +36,15 @@ const Basket = ({ basketItems, setBasketActive, basketActive }) => {
                                                       {item.price} Руб.
                                                   </span>
                                               </div>
+                                              <span
+                                                  onClick={() =>
+                                                      removeFromBasket(
+                                                          item,
+                                                          `${index}_${item.text}`,
+                                                      )
+                                                  }>
+                                                  X
+                                              </span>
                                           </div>
                                       ))
                                     : null}
