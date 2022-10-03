@@ -8,9 +8,10 @@ const RouteList = ({ addToBasket, addToFavorite }) => {
 
     return (
         <Routes>
-            {routeList.map((item) => {
+            {routeList.map((item, index) => {
                 return (
                     <Route
+                        key={index}
                         path={`${item.route}`}
                         element={
                             <Layout

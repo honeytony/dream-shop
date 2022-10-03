@@ -18,29 +18,60 @@ export default function App() {
     const [basketSum, setBasketSum] = useState(0); //Сумма всех товаров в корзине
 
     //Добавление товара в корзину
-    function addToBasket(card) {
+    function addToBasket(card, operator) {
         let basItems = JSON.parse(localStorage.getItem('basketItems')) || [];
-        basItems.push(card);
-        localStorage.setItem('basketItems', JSON.stringify(basItems));
-        setBasketItems(JSON.parse(localStorage.getItem('basketItems')));
+
+        //записываем при условии что элемента в корзине нет
+        if (basketCheck(basItems, card) === undefined) {
+            card.count = 1;
+            card.newPrice = card.price;
+            basItems.push(card);
+            saveToLocalStorage('basketItems', basItems);
+        } else {
+            let items = JSON.parse(localStorage.getItem('basketItems'));
+            items.forEach((item) => {
+                if (item.id === card.id) {
+                    if (operator === 'add') {
+                        item.count += 1;
+                    } else if (operator === 'delete') {
+                        if (item.count <= 1) {
+                            items.filter((data) => data.id !== item.id);
+                            alert('меньше');
+                        } else {
+                            item.count -= 1;
+                        }
+                    }
+
+                    item.newPrice = item.price * item.count;
+                }
+            });
+            saveToLocalStorage('basketItems', items);
+        }
+    }
+
+    //функция сохранения в localStorage
+    function saveToLocalStorage(storage, items) {
+        localStorage.setItem(storage, JSON.stringify(items));
+        setBasketItems(JSON.parse(localStorage.getItem(storage)));
+    }
+
+    //проверка на повторение товара
+    function basketCheck(arr, card) {
+        return arr.find((item) => item.id === card.id);
     }
 
     //Удаление товара из корзины
-    function removeFromBasket(card, index) {
+    function removeFromBasket(card) {
         let basItems = JSON.parse(localStorage.getItem('basketItems'));
-        console.log('card: ', card, ' card index: ', index);
-        let newBasItems = basItems.filter(
-            (item) => `${index}_${item.text}` !== `${index}_${card.text}`,
-        );
-        localStorage.setItem('basketItems', JSON.stringify(newBasItems));
-        setBasketItems(JSON.parse(localStorage.getItem('basketItems')));
+        let newBasItems = basItems.filter((item) => item.id !== card.id);
+        saveToLocalStorage('basketItems', newBasItems);
     }
 
     function addToFavorite(card) {
-        let favItems = JSON.parse(localStorage.getItem('favoriteItems')) || [];
-        favItems.push(card);
-        localStorage.setItem('favoriteItems', JSON.stringify(favItems));
-        setFavoriteItems(JSON.parse(localStorage.getItem('favoriteItems')));
+        // let favItems = JSON.parse(localStorage.getItem('favoriteItems')) || [];
+        // favItems.push(card);
+        // localStorage.setItem('favoriteItems', JSON.stringify(favItems));
+        // setFavoriteItems(JSON.parse(localStorage.getItem('favoriteItems')));
     }
 
     useEffect(() => {
@@ -51,7 +82,7 @@ export default function App() {
     function calculateBasket(data) {
         let sum = 0;
         data.forEach((item) => {
-            sum += item.price;
+            sum += item.newPrice;
         });
         return sum;
     }
@@ -69,6 +100,7 @@ export default function App() {
                 setBasketActive={setBasketActive}
                 basketSum={basketSum}
                 removeFromBasket={removeFromBasket}
+                addToBasket={addToBasket}
             />
             <RouteList addToBasket={addToBasket} addToFavorite={addToFavorite} />
         </div>

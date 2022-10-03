@@ -9,10 +9,10 @@ const ItemList = ({ items, addToBasket, addToFavorite }) => {
                     <span className="item-header">{item.text}</span>
                     <span className="item-cost">{item.price} Руб.</span>
                     <div className="buttons">
-                        <button className="btn" onClick={() => addToBasket(item)}>
+                        <button className="btn" onClick={() => addToBasket(item, 'add')}>
                             Добавить в корзину
                         </button>
-                        <button className="btn" onClick={() => addToFavorite(item)}>
+                        <button className="btn" onClick={() => addToFavorite(item, 'delete')}>
                             +
                         </button>
                     </div>

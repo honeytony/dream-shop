@@ -1,7 +1,14 @@
 import React from 'react';
 import './basket.scss';
 
-const Basket = ({ basketItems, setBasketActive, basketActive, basketSum, removeFromBasket }) => {
+const Basket = ({
+    basketItems,
+    setBasketActive,
+    basketActive,
+    basketSum,
+    removeFromBasket,
+    addToBasket,
+}) => {
     return (
         <div>
             {basketActive ? (
@@ -31,20 +38,37 @@ const Basket = ({ basketItems, setBasketActive, basketActive, basketSum, removeF
                                               key={`${index}_${item.price}`}>
                                               <img src={item.img} alt={item.text} />
                                               <div className="texts">
-                                                  <span className="item-header">{item.text}</span>
-                                                  <span className="item-cost">
-                                                      {item.price} Руб.
-                                                  </span>
+                                                  <div className="headers">
+                                                      <span className="item-header">
+                                                          {item.text}
+                                                      </span>
+                                                      <span className="item-cost">
+                                                          {item.newPrice} Руб.
+                                                      </span>
+                                                  </div>
+                                                  <div className="options">
+                                                      <div className="count">
+                                                          <span
+                                                              onClick={() =>
+                                                                  addToBasket(item, 'delete')
+                                                              }>
+                                                              &lt;
+                                                          </span>
+                                                          <span>{item.count}</span>
+                                                          <span
+                                                              onClick={() =>
+                                                                  addToBasket(item, 'add')
+                                                              }>
+                                                              &gt;
+                                                          </span>
+                                                      </div>
+                                                      <span
+                                                          className="exit"
+                                                          onClick={() => removeFromBasket(item)}>
+                                                          Удалить
+                                                      </span>
+                                                  </div>
                                               </div>
-                                              <span
-                                                  onClick={() =>
-                                                      removeFromBasket(
-                                                          item,
-                                                          `${index}_${item.text}`,
-                                                      )
-                                                  }>
-                                                  X
-                                              </span>
                                           </div>
                                       ))
                                     : null}

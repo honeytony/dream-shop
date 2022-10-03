@@ -6,17 +6,6 @@ const Items = ({ addToBasket, addToFavorite, category }) => {
     useEffect(() => {
         setItems(require(`../Database/${category}.json`));
     }, [category]);
-    //const dataBaseLink = `https://run.mocky.io/v3/e636587f-12eb-499e-889b-0949d6368b19`;
-
-    /*React.useEffect(() => {
-        fetch(dataBaseLink)
-            .then((res) => {
-                return res.json();
-            })
-            .then((json) => {
-                setItems(json);
-            });
-    }, []);*/
     return <ItemList items={items} addToBasket={addToBasket} addToFavorite={addToFavorite} />;
 };
 

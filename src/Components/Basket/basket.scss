@@ -10,6 +10,8 @@
     .basket {
         border-radius: 25px;
         width: 800px;
+        max-height: 80vh;
+        min-height: 40vh;
         max-width: 100%;
         margin: 0 auto;
         background-color: white;
@@ -31,33 +33,45 @@
         &-items {
             display: flex;
             flex-direction: row;
-
             .calculator {
                 width: 35%;
                 border: 1px lightgray;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                height: 400px;
             }
             .itemss {
                 width: 70%;
-                height: 400px;
+                max-height: 70vh;
+                min-height: 40vh;
                 padding-right: 20px;
                 overflow-y: scroll;
+                .exit {
+                    display: flex;
+                    align-self: end;
+                }
             }
             &-item {
                 border-bottom: 2px solid rgb(255, 238, 252);
                 padding: 14px 0;
                 display: flex;
-                img {
-                    width: 110px;
-                }
+
                 justify-content: space-between;
-                .texts {
+
+                .headers {
                     display: flex;
                     flex-direction: column;
                     align-items: flex-end;
+                    text-align: right;
+                }
+                img {
+                    height: 100px;
+                }
+                .texts {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    align-items: center;
                     .item-header {
                         font-size: 18px;
                     }
@@ -65,6 +79,22 @@
                         font-size: 16px;
                         margin-top: 20px;
                         font-weight: 600;
+                    }
+                    .options {
+                        display: flex;
+                        justify-content: flex-end;
+                        width: 100%;
+                        margin-top: 16px;
+                        .count {
+                            width: 40px;
+                            display: flex;
+                            justify-content: space-around;
+                            cursor: pointer;
+                            margin-right: 20px;
+                        }
+                        .exit {
+                            cursor: pointer;
+                        }
                     }
                 }
             }

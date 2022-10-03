@@ -49,8 +49,6 @@ const Header = ({ setBasketActive, basketItemsCount, favoriteItemsCount }) => {
                     </div>
                 </div>
 
-                {/* {menuActive ? ( */}
-
                 <Transition in={menuActive} timeout={{ exit: 1000 }} mountOnEnter unmountOnExit>
                     {(state) => (
                         <nav className={state}>
